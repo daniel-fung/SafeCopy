@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CF8E839-9B54-4975-98BD-6934F2C02CAB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{B8BC5E33-C6A8-41A1-AB97-6E23A2AE00DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SafeCopy</RootNamespace>
-    <AssemblyName>SafeCopy</AssemblyName>
+    <RootNamespace>SafeCopy.Infrastructure</RootNamespace>
+    <AssemblyName>SafeCopy.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -59,19 +62,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Models\Directory.cs" />
+    <Compile Include="Models\File.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Services\CheckSumService.cs" />
+    <Compile Include="Services\CompareService.cs" />
+    <Compile Include="Services\CompareServiceExtensions.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\ICheckSumService.cs" />
+    <Compile Include="Services\ICompareService.cs" />
+    <Compile Include="Services\IFileService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SafeCopy.Infrastructure\SafeCopy.Infrastructure.csproj">
-      <Project>{B8BC5E33-C6A8-41A1-AB97-6E23A2AE00DD}</Project>
-      <Name>SafeCopy.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
