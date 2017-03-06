@@ -62,11 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CheckSum.cs" />
     <Compile Include="Models\Directory.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Module.cs" />
-    <Compile Include="Services\CheckSumService.cs" />
+    <Compile Include="Services\DirectoryService.cs" />
+    <Compile Include="Services\IDirectoryService.cs" />
+    <Compile Include="Services\MD5CheckSumService.cs" />
     <Compile Include="Services\CompareService.cs" />
     <Compile Include="Services\CompareServiceExtensions.cs" />
     <Compile Include="Services\FileService.cs" />

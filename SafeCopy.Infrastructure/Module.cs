@@ -17,9 +17,10 @@ namespace SafeCopy.Infrastructure
 
       _container = container;
 
-      _container.RegisterType<ICheckSumService, CheckSumService>();
+      _container.RegisterType<ICheckSumService, MD5CheckSumService>();
       _container.RegisterType<IFileService, FileService>();
       _container.RegisterType<ICompareService, CompareService>();
+      _container.RegisterType<IDirectoryService, DirectoryService>();
     }
   }
 }

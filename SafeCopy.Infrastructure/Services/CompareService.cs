@@ -29,8 +29,8 @@ namespace SafeCopy.Infrastructure.Services
         throw new ArgumentNullException("file2");
       }
 
-      var checkSum1 = _fileService.GetCheckSum(file1);
-      var checkSum2 = _fileService.GetCheckSum(file2);
+      var checkSum1 = file1.GetCheckSum();
+      var checkSum2 = file2.GetCheckSum();
 
       return checkSum1.Equals(checkSum2);
     }

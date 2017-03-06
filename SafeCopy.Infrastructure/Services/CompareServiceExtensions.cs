@@ -17,10 +17,12 @@ namespace SafeCopy.Infrastructure.Services
         throw new ArgumentNullException("file2");
       }
 
-      var f1 = new File(file1);
-      var f2 = new File(file2);
+      //var f1 = new File(file1);
+      //var f2 = new File(file2);
 
-      return compareService.AreSame(f1, f2);
+      //return compareService.AreSame(f1, f2);
+
+      return false;
     }
   }
 }

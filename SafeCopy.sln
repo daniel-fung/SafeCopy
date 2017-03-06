@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeCopy", "SafeCopy\SafeCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeCopy.Infrastructure", "SafeCopy.Infrastructure\SafeCopy.Infrastructure.csproj", "{B8BC5E33-C6A8-41A1-AB97-6E23A2AE00DD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B62C26D2-9224-4ACF-8D24-492CFA0F7E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.SafeCopy.Infrastructure", "Tests.SafeCopy.Infrastructure\Tests.SafeCopy.Infrastructure.csproj", "{779E777A-BFC8-488B-BCE4-BB8FAE8A163F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{B8BC5E33-C6A8-41A1-AB97-6E23A2AE00DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8BC5E33-C6A8-41A1-AB97-6E23A2AE00DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8BC5E33-C6A8-41A1-AB97-6E23A2AE00DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779E777A-BFC8-488B-BCE4-BB8FAE8A163F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779E777A-BFC8-488B-BCE4-BB8FAE8A163F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779E777A-BFC8-488B-BCE4-BB8FAE8A163F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779E777A-BFC8-488B-BCE4-BB8FAE8A163F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{779E777A-BFC8-488B-BCE4-BB8FAE8A163F} = {B62C26D2-9224-4ACF-8D24-492CFA0F7E67}
 	EndGlobalSection
 EndGlobal
