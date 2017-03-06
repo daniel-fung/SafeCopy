@@ -1,0 +1,1 @@
+This is a pet project for safely copying files from one source to another.  I have been having random issues with copying photos from SD Cards to local drive.  This tool will ensure what is copied is same as source.
