@@ -9,18 +9,10 @@ namespace SafeCopy.Infrastructure.Services
 
     public FileService(ICheckSumService checkSumService)
     {
-      if (checkSumService == null)
-      {
-        throw new ArgumentNullException("checkSumService");
-      }
-
-      _checkSumService = checkSumService;
+      _checkSumService = checkSumService ?? throw new ArgumentNullException("checkSumService");
     }
 
-    public File OpenFile(string path)
-    {
-      return new File(path, this, _checkSumService);
-    }
+    public IFile OpenFile(string path) => new File(path, this, _checkSumService);
 
     public bool Exists(string path)
     {
@@ -32,7 +24,7 @@ namespace SafeCopy.Infrastructure.Services
       return System.IO.File.Exists(path);
     }
 
-    public string GetFileName(File file)
+    public string GetFileName(IFile file)
     {
       if (file == null)
       {
@@ -42,7 +34,7 @@ namespace SafeCopy.Infrastructure.Services
       return System.IO.Path.GetFileName(file.Path);
     }
 
-    public System.IO.Stream ReadFile(File file)
+    public System.IO.Stream ReadFile(IFile file)
     {
       if (file == null)
       {
@@ -52,7 +44,7 @@ namespace SafeCopy.Infrastructure.Services
       return System.IO.File.OpenRead(file.Path);
     }
 
-    public File Copy(File source, string targetPath)
+    public IFile Copy(IFile source, string targetPath)
     {
       if (source == null)
       {

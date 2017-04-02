@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SafeCopy.Infrastructure.Models
 {
-  public class Directory
+  public class Directory : IDirectory
   {
     private readonly IDirectoryService _directoryService;
     private readonly IFileService _fileService;
@@ -48,7 +48,7 @@ namespace SafeCopy.Infrastructure.Models
       }
     }
 
-    public Directory CopyTo(string destBasePath)
+    public IDirectory CopyTo(string destBasePath)
     {
       if (string.IsNullOrWhiteSpace(destBasePath))
       {

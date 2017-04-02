@@ -3,7 +3,7 @@ using System;
 
 namespace SafeCopy.Infrastructure.Models
 {
-  public class File
+  public class File : IFile
   {
     private readonly IFileService _fileService;
     private readonly ICheckSumService _checkSumService;
@@ -55,7 +55,7 @@ namespace SafeCopy.Infrastructure.Models
       return checkSum;
     }
 
-    public File Copy(string targetPath)
+    public IFile Copy(string targetPath)
     {
       if (string.IsNullOrWhiteSpace(targetPath))
       {
