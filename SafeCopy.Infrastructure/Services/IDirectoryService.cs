@@ -5,15 +5,15 @@ namespace SafeCopy.Infrastructure.Services
 {
   public interface IDirectoryService
   {
-    Directory CreateDirectory(string path);
+    IDirectory CreateDirectory(string path);
 
-    Directory OpenDirectory(string path);
+    IDirectory OpenDirectory(string path);
 
     bool Exists(string path);
 
-    string GetDirectoryName(Directory dir);
+    string GetDirectoryName(IDirectory dir);
 
-    IEnumerable<string> GetFiles(Directory dir);
+    IEnumerable<string> GetFiles(IDirectory dir);
 
     char DirectorySeparator { get; }
   }

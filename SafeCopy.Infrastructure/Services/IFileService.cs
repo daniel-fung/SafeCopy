@@ -4,14 +4,14 @@ namespace SafeCopy.Infrastructure.Services
 {
   public interface IFileService
   {
-    File OpenFile(string path);
+    IFile OpenFile(string path);
 
     bool Exists(string path);
 
-    string GetFileName(File file);
+    string GetFileName(IFile file);
 
-    System.IO.Stream ReadFile(File file);
+    System.IO.Stream ReadFile(IFile file);
 
-    File Copy(File source, string targetPath);
+    IFile Copy(IFile source, string targetPath);
   }
 }

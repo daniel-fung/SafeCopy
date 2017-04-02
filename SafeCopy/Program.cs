@@ -27,16 +27,10 @@ namespace SafeCopy
       var container = new UnityContainer();
       var module = container.Resolve<Module>();
 
-      //var compareService = container.Resolve<ICompareService>();
-      //Console.WriteLine(compareService.AreSame(path1, path2));
+      var dispatch = container.Resolve<IDispatchService>();
+      var hasSucceeded = dispatch.Copy(path1, path2);
 
-      //var fileService = container.Resolve<IFileService>();
-      //var file1 = fileService.OpenFile(path1);
-      //var file2 = file1.Copy(path2);
-
-      var directoryService = container.Resolve<IDirectoryService>();
-      var dir1 = directoryService.OpenDirectory(path1);
-      var dir2 = dir1.CopyTo(path2);
+      Environment.ExitCode = hasSucceeded ? 0 : 1;
     }
   }
 }

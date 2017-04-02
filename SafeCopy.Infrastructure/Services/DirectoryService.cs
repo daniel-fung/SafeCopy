@@ -10,12 +10,7 @@ namespace SafeCopy.Infrastructure.Services
 
     public DirectoryService(IFileService fileService)
     {
-      if (fileService == null)
-      {
-        throw new ArgumentNullException("fileService");
-      }
-
-      _fileService = fileService;
+      _fileService = fileService ?? throw new ArgumentNullException("fileService");
     }
 
     public char DirectorySeparator
@@ -26,7 +21,7 @@ namespace SafeCopy.Infrastructure.Services
       }
     }
 
-    public Directory CreateDirectory(string path)
+    public IDirectory CreateDirectory(string path)
     {
       if (Exists(path))
       {
@@ -37,7 +32,7 @@ namespace SafeCopy.Infrastructure.Services
       return new Directory(path, this, _fileService);
     }
 
-    public Directory OpenDirectory(string path)
+    public IDirectory OpenDirectory(string path)
     {
       if (!Exists(path))
       {
@@ -57,7 +52,7 @@ namespace SafeCopy.Infrastructure.Services
       return System.IO.Directory.Exists(path);
     }
 
-    public string GetDirectoryName(Directory dir)
+    public string GetDirectoryName(IDirectory dir)
     {
       if (dir == null)
       {
@@ -67,7 +62,7 @@ namespace SafeCopy.Infrastructure.Services
       return System.IO.Path.GetDirectoryName(dir.Path);
     }
 
-    public IEnumerable<string> GetFiles(Directory dir)
+    public IEnumerable<string> GetFiles(IDirectory dir)
     {
       if (dir == null)
       {
