@@ -70,7 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Services\DirectoryService.cs" />
+    <Compile Include="Services\DispatchService.cs" />
     <Compile Include="Services\IDirectoryService.cs" />
+    <Compile Include="Services\IDispatchService.cs" />
     <Compile Include="Services\MD5CheckSumService.cs" />
     <Compile Include="Services\CompareService.cs" />
     <Compile Include="Services\CompareServiceExtensions.cs" />
