@@ -10,7 +10,7 @@ namespace SafeCopy.Infrastructure
 
     public Module(IUnityContainer container)
     {
-      _container = container ?? throw new ArgumentNullException("container");
+      _container = Throw.IfNull(container, "container");
 
       _container.RegisterType<ICheckSumService, MD5CheckSumService>();
       _container.RegisterType<IFileService, FileService>();
