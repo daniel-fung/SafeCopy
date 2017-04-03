@@ -80,6 +80,7 @@
     <Compile Include="Services\ICheckSumService.cs" />
     <Compile Include="Services\ICompareService.cs" />
     <Compile Include="Services\IFileService.cs" />
+    <Compile Include="Throw.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

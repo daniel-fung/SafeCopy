@@ -10,7 +10,7 @@ namespace SafeCopy.Infrastructure.Services
 
     public DirectoryService(IFileService fileService)
     {
-      _fileService = fileService ?? throw new ArgumentNullException("fileService");
+      _fileService = Throw.IfNull(fileService, "fileService");
     }
 
     public char DirectorySeparator

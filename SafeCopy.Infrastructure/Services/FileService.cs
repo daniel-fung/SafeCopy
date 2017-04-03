@@ -9,7 +9,7 @@ namespace SafeCopy.Infrastructure.Services
 
     public FileService(ICheckSumService checkSumService)
     {
-      _checkSumService = checkSumService ?? throw new ArgumentNullException("checkSumService");
+      _checkSumService = Throw.IfNull(checkSumService, "checkSumService");
     }
 
     public IFile OpenFile(string path) => new File(path, this, _checkSumService);

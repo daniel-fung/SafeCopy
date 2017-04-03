@@ -9,12 +9,7 @@ namespace SafeCopy.Infrastructure.Services
 
     public CompareService(IFileService fileService)
     {
-      if (fileService == null)
-      {
-        throw new ArgumentNullException("fileService");
-      }
-
-      _fileService = fileService;
+      _fileService = Throw.IfNull(fileService, "fileService");
     }
 
     public bool AreSame(File file1, File file2)

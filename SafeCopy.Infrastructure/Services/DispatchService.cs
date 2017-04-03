@@ -9,8 +9,8 @@ namespace SafeCopy.Infrastructure.Services
 
     public DispatchService(IFileService fileService, IDirectoryService directoryService)
     {
-      _fileService = fileService ?? throw new ArgumentNullException("fileService");
-      _directoryService = directoryService ?? throw new ArgumentNullException("directoryService");
+      _fileService = Throw.IfNull(fileService, "fileService");
+      _directoryService = Throw.IfNull(directoryService, "directoryService");
     }
 
     public bool Copy(string source, string target)
